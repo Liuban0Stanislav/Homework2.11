@@ -1,0 +1,2 @@
+http://localhost:8080/add?name=чашка&price=153
+http://localhost:8080/get
