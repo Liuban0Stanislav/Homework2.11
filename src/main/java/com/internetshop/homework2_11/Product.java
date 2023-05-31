@@ -1,14 +1,19 @@
 package com.internetshop.homework2_11;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
-
+@Component
 public class Product {
-    private int id;
+    private Integer idCounter = 1;
+    private Integer id;
     private String name;
-    private double price;
 
-    public Product(String name, double price) {
-        this.id = id + 1;
+    private Double price;
+
+
+    public Product(String name, Double price) {
+        this.id = idCounter++;
         this.name = name;
         this.price = price;
     }
@@ -51,3 +56,4 @@ public class Product {
         return Objects.hash(id, name, price);
     }
 }
+

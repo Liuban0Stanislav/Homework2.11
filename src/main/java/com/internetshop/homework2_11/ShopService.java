@@ -1,12 +1,20 @@
 package com.internetshop.homework2_11;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service
+@Scope(scopeName = "prototype")
 public class ShopService {
-    ShoppingCart shoppingCart = new ShoppingCart();
+    private ShoppingCart shoppingCart;
+    private Product product;
 
-    public void add(String name, double price) {
+    public ShopService(ShoppingCart shoppingCart, Product product) {
+        this.shoppingCart = shoppingCart;
+        this.product = product;
+    }
+
+    public void add(String name, Double price) {
         Product product = new Product(name, price);
         shoppingCart.getChart().put(product.getId(), product);
     }
@@ -15,3 +23,5 @@ public class ShopService {
         return shoppingCart.getChart().toString();
     }
 }
+
+
