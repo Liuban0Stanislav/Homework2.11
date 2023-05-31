@@ -2,16 +2,18 @@ package com.internetshop.homework2_11;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 
 @Service
-@Scope(scopeName = "prototype")
+//@Scope(scopeName = "prototype")
+
 public class ShopService {
     private ShoppingCart shoppingCart;
-    private Product product;
+//    private Product product;
 
-    public ShopService(ShoppingCart shoppingCart, Product product) {
+    public ShopService(ShoppingCart shoppingCart/*, Product product*/) {
         this.shoppingCart = shoppingCart;
-        this.product = product;
+//        this.product = product;
     }
 
     public void add(String name, Double price) {

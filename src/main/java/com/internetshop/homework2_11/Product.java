@@ -3,12 +3,11 @@ package com.internetshop.homework2_11;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
-@Component
+
 public class Product {
     private Integer idCounter = 1;
     private Integer id;
     private String name;
-
     private Double price;
 
 
